@@ -188,15 +188,3 @@ class App extends React.Component {
 }
 
 export default App;
-    
-    
-// external ressources:
-// react-leaflet library
-// API from la Ville de Nantes
-// lodash
-// vérifier...
-    
-    
-// external leaning ressources:
-// How to fetch data in React
-// https://www.robinwieruch.de/react-fetching-data/
