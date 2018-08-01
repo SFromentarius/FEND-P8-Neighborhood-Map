@@ -23,6 +23,6 @@ Just above the list you can enter a research about an event's name, and the list
 - To combine both React and Leaflet, I used [react-leaflet](https://react-leaflet.js.org/), very well documented.
 
 
-I also use some other ressources such as [lodash](https://github.com/lodash/lodash) to sort the fetched data by date, [moment](http://momentjs.com/) to combine various date format, and [react-add-to-calendar](https://www.npmjs.com/package/react-add-to-calendar) to add a "add to calendar" button in the event popup.
+I also use some other ressources such as [lodash](https://github.com/lodash/lodash) to sort the fetched data by date, [moment](http://momentjs.com/) to combine various date format, [react-add-to-calendar](https://www.npmjs.com/package/react-add-to-calendar) to add a "add to calendar" button in the event popup, and [SweetAlert](https://sweetalert.js.org/) to display errors when they occur.
 
 Also, I find some articles very useful, such as [this one about fetching data in React](https://www.robinwieruch.de/react-fetching-data/) and [this other one giving some tips to make a React app more accessible](https://dev.to/johnlukeg/make-react-navigation-accessible-again).
