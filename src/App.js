@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import escapeRegExp from 'escape-string-regexp';
 import moment from 'moment';
+import swal from 'sweetalert';
 import './App.css';
 import Map from './Map';
 import Aside from './Aside';
@@ -155,7 +156,7 @@ class App extends React.Component {
         
         //if an error is thrown
         if (this.state.error) {
-          return <p>{this.state.error.message}</p>;
+          swal(this.state.error.message);
         }
         
         //if loading, display this Loading Page

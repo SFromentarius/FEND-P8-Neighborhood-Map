@@ -7,9 +7,11 @@
         "gh-pages": "^1.2.0",
         "moment": "^2.22.2",
         "react": "^16.4.1",
+        "react-a11y": "^1.0.0",
         "react-add-to-calendar": "^0.1.5",
         "react-dom": "^16.4.1",
-        "react-scripts": "1.1.4"
+        "react-scripts": "1.1.4",
+        "sweetalert": "^2.1.0"
     },
     "scripts": {
         "start": "react-scripts start",
