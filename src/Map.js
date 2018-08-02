@@ -1,6 +1,7 @@
 import React from 'react';
 import * as ReactLeaflet from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
+import swal from 'sweetalert';
 
 import './App.css';
 
@@ -47,6 +48,15 @@ class Map extends React.Component {
         // TO DO : error when no matching with query which cause ref invalid !
     }
     
+    
+    handleTileError(errorData){
+        console.log(errorData)
+        
+        if(errorData){
+            swal('Leaflet Map fails. Error getting basemap tiles.')
+        }
+    }
+    
     render() {       
         // Nantes (French city) coordinates
         const position = [47.218371, -1.553621];
@@ -55,8 +65,9 @@ class Map extends React.Component {
         return (
           <LeafletMap ref='map' center={position} zoom={zoom} > 
             <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url='http://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url='http://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+                onTileerror={errorData => this.handleTileError(errorData)}
             />
             <FeatureGroup ref={ref => {
             if(ref){
@@ -78,14 +89,18 @@ class Map extends React.Component {
                                     {event.endTime}</span><br/>
                                     <span className='popup-place'>{event.place}</span> <br/>
                                     <span className='popup-description'>{event.description}</span> <br/>
-                                    <span className='popup-lien'>Plus d'informations : <a href={event.link} target='blank'>{event.link}</a></span>
+                                    
+                                    {event.link &&(
+                                        <span className='popup-lien'>Plus d'informations : <a href={event.link} target='blank'>{event.link}</a></span>                   
+                                    )}
+                                                         
                                     <AddToCalendar event={{
-                title:event.name,
-                description:event.description,
-                location:event.place,
-                startTime:event.startTime,
-                endTime:event.endTime
-            }} onClick={this.scrollDown} buttonLabel="Ajouter à mon calendrier" role='button'/>
+                                        title:event.name,
+                                        description:event.description,
+                                        location:event.place,
+                                        startTime:event.startTime,
+                                        endTime:event.endTime
+                                    }} onClick={this.scrollDown} buttonLabel="Ajouter à mon calendrier" role='button'/>
                                 </Popup>
                             </Marker>                   
                     )
