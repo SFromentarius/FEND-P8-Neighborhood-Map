@@ -4,7 +4,7 @@
 The aim of this final project was to develop a single page application featuring a map of a neighborhood of our choice. We had to add functionalities to this map including highlighted locations, third-party data about those locations and various ways to browse the content.
 
 ## How to see the project ?
-- You can directly go on the [Github Pages](https://sfromentarius.github.io/FEND-P8-Neighborhood-Map/)
+- You can directly go on the [Github Page](https://sfromentarius.github.io/FEND-P8-Neighborhood-Map/)
 - Or you can clone the projet, cd on master branch, and run `npm install` to install modules, then `npm start`.
 
 ## The data
