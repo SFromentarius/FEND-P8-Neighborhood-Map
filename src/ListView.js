@@ -15,7 +15,7 @@ class ListView extends React.Component {
                 {this.props.data &&(
                     this.props.showedData.map((data, index)=>{
                         return(
-                            <li role='button' key={data.id} id={data.id} onClick={this.props.handleClick.bind(this, data.id)} onKeyPress={buildHandleEnterKeyPress(this.props.handleClick.bind(this, data.id))} tabIndex={index+2}> 
+                            <li role='button' key={data.id} id={data.id} onClick={this.props.handleClick.bind(this, data.id)} onKeyPress={buildHandleEnterKeyPress(this.props.handleClick.bind(this, data.id))} tabIndex='0'> 
                                 <b className="list-name">{data.name}</b> <br/> 
                                 <i className="list-location">{data.place}</i> <br/>
                                 <span className="list-date">{data.date}</span>
