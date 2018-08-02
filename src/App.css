@@ -9,7 +9,7 @@
     position: absolute;
 }
 
-@media  (max-width:620px){
+@media screen (max-width:620px){
     .sub-container{
         grid-template-areas:"sm-menu header" "map map";
     }
@@ -171,7 +171,7 @@
     overflow-y: auto;
 }
 
-@media  (max-width:620px){
+@media screen (max-width:620px){
     .aside{
         display:none;
     }
