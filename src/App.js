@@ -39,6 +39,7 @@ class App extends React.Component {
             openedPopupID:'', 
             query:'',
             asideClassName:'aside',
+            menuExpanded:false,
             mapClassName:'leaflet-container'
         };
     }
@@ -127,7 +128,7 @@ class App extends React.Component {
     handleClick(id, e){
         this.setState({openedPopupID:id})
         if(this.state.asideClassName === 'sm-aside-open'){
-            this.setState({asideClassName:'aside'})
+            this.setState({asideClassName:'aside', menuExpanded:false})
         }
     }
 
@@ -137,7 +138,7 @@ class App extends React.Component {
     }
     
     menuClick(){
-        this.setState({asideClassName:'sm-aside-open'})
+        this.setState({asideClassName:'sm-aside-open', menuExpanded:true})
         
     }
     
@@ -167,9 +168,9 @@ class App extends React.Component {
         // when finishes loading, display the website       
         return (
             <div className='sub-container'>
-                <div className='sm-menu' onClick={this.menuClick.bind(this)} role="navigation" type="button" aria-haspopup="true" aria-controls="eventList" aria-expanded="false"><ul><li></li><li></li><li></li></ul></div>
+                <div className='sm-menu' onClick={this.menuClick.bind(this)} role="button" aria-haspopup="true" aria-controls="eventList" aria-expanded={this.state.menuExpanded} tabIndex='1'><ul><li></li><li></li><li></li></ul></div>
                 <Header/>
-                <Aside id='eventList'
+                <Aside id='eventList' role='menu'
                     data={this.state.data}
                     handleClick={this.handleClick.bind(this)}
                     query={this.state.query}

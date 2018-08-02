@@ -9,6 +9,7 @@
         "react": "^16.4.1",
         "react-a11y": "^1.0.0",
         "react-add-to-calendar": "^0.1.5",
+        "react-content-loader": "^3.1.2",
         "react-dom": "^16.4.1",
         "react-leaflet": "^2.0.0",
         "react-scripts": "1.1.4",

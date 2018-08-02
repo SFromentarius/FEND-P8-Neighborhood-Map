@@ -58,7 +58,10 @@ class Map extends React.Component {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url='http://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
             />
-            <FeatureGroup ref={ref => this.mapFitBounds(ref, this.refs.map.leafletElement)}> {/*  */}
+            <FeatureGroup ref={ref => {
+            if(ref){
+            this.mapFitBounds(ref, this.refs.map.leafletElement)}}}> 
+                
             {this.props.data && (
                 /* showedData is either equivalent to all data or to filteredData (from query) */
                 this.props.showedData.map(event=>{
