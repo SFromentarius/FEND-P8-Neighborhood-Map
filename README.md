@@ -5,7 +5,7 @@ The aim of this final project was to develop a single page application featuring
 
 ## How to see the project ?
 - You can directly go on the [Github Page](https://sfromentarius.github.io/FEND-P8-Neighborhood-Map/)
-- Or you can clone the projet, cd on master branch, and run `npm install` to install modules, then `npm start`.
+- Or you can clone the projet, cd on master branch, and run `npm install` to install modules, then `npm start`. You should see the website at the local address: http://localhost:3000.
 
 ## The data
 I choosed to use open data from the French City of Nantes. These data are about the events of the City of Nantes. You can find the original API [here](https://data.nantesmetropole.fr/explore/dataset/244400404_agenda-evenements-nantes-nantes-metropole/information/?disjunctive.emetteur&disjunctive.rubrique&disjunctive.lieu&disjunctive.ville&rows=5&sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJzY2F0dGVyIiwiZnVuYyI6IkNPVU5UIiwieUF4aXMiOiJpZF9tYW5pZiIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiNGMThDMDAifV0sInhBeGlzIjoicnVicmlxdWUiLCJtYXhwb2ludHMiOm51bGwsInRpbWVzY2FsZSI6IiIsInNvcnQiOiIiLCJjb25maWciOnsiZGF0YXNldCI6IjI0NDQwMDQwNF9hZ2VuZGEtZXZlbmVtZW50cy1uYW50ZXMtbmFudGVzLW1ldHJvcG9sZSIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUuZW1ldHRldXIiOnRydWUsImRpc2p1bmN0aXZlLnJ1YnJpcXVlIjp0cnVlLCJkaXNqdW5jdGl2ZS5saWV1Ijp0cnVlLCJkaXNqdW5jdGl2ZS52aWxsZSI6dHJ1ZX19fV0sImRpc3BsYXlMZWdlbmQiOnRydWUsInRpbWVzY2FsZSI6IiJ9). It was the opportunity to use an external API, already existing and with relevant information.
