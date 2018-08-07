@@ -9,7 +9,6 @@ class ListView extends React.Component {
             onClick(); 
           }
         };
-      
     return (
         <ul className='list-view'>
                 {this.props.data &&(
@@ -18,11 +17,15 @@ class ListView extends React.Component {
                             <li role='button' key={data.id} id={data.id} onClick={this.props.handleClick.bind(this, data.id)} onKeyPress={buildHandleEnterKeyPress(this.props.handleClick.bind(this, data.id))} tabIndex='0'> 
                                 <b className="list-name">{data.name}</b> <br/> 
                                 <i className="list-location">{data.place}</i> <br/>
-                                <span className="list-date">{data.date}</span>
+                                <span className="list-date">{data.startTime} 
+                                        {data.endTime && ( <span> - </span> )} 
+                                    {data.endTime}</span>
+                                {/*<span className="list-date">{data.date}</span>*/}
                             </li>
                         )
                     })
                 )}
+            <li className="list-name list-bottom">source : données open source de <a href='https://data.nantesmetropole.fr/pages/home/' target='_blank' rel="noopener noreferrer">Nantes Métropole</a></li>
             <li className="list-name">créé par @<a href='https://twitter.com/SFromentarius' target='_blank' rel="noopener noreferrer">SFromentarius</a></li>
         </ul>
      
