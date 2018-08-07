@@ -25,7 +25,7 @@ const MyLoader = props => (
     secondaryColor="#ecebeb"
     {...props}
   >
-    <rect x="92" y="140" rx="5" ry="5" width="220" height="10" /> 
+    <rect x="92" y="110" rx="5" ry="5" width="220" height="10" /> 
   </ContentLoader>
 )
 
