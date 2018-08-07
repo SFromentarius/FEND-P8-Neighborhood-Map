@@ -13,7 +13,7 @@ import Header from './Header';
 import ContentLoader from 'react-content-loader';
 
 //"Agenda des événements de la Ville de Nantes et de Nantes Métropole" API, about city events in the Nantes' City
-const API = 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&rows=25&sort=-date&facet=emetteur&facet=rubrique&facet=lieu&facet=ville'
+const API = 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&rows=500&sort=-date&facet=emetteur&facet=rubrique&facet=lieu&facet=ville'
 
 //React Content Loader
 const MyLoader = props => (
@@ -61,7 +61,6 @@ class App extends React.Component {
                 //get useful data
                 let prelocationData = data.records.map((event)=>{
                     //console.log(event.heure_debut + event.heure_fin);
-                    
                     let date = event.fields.date;
                     let name = event.fields.nom;
                     let place = event.fields.lieu;
@@ -77,9 +76,18 @@ class App extends React.Component {
                     
                     return {name:name, date:date, location:location, place:place, description:description, urlMedia:urlMedia, link:link, startTime:startTime, endTime:endTime, id:id};
             })
-            
+         
                 //sort by date
                 prelocationData = _.sortBy(prelocationData, 'date');
+                    
+                
+               prelocationData = prelocationData.filter((event)=>{
+                    let eventDate = moment(event.date).get('date');
+                    let eventMonth = moment(event.date).get('month');
+                    let todayDate = moment().get('date');
+                    let todayMonth = moment().get('month');
+                    return(eventDate === todayDate && eventMonth===todayMonth);
+                })
 
                 //change the date format
                 let locationData = prelocationData.map((event)=>{
@@ -97,7 +105,7 @@ class App extends React.Component {
                     let unFormattedDate = new Date(event.date);
                     let predate = unFormattedDate.toLocaleDateString('fr-FR', options);
                     let date=predate;
-                                        
+
                     let dateStartTime
                     if(startTime){
                         let predateStartTime = moment(unFormattedDate + " " + startTime);
