@@ -6,6 +6,7 @@ import LocationFilter from './LocationFilter';
 const Aside =(props)=> {
         return (
             <div className={props.asideClassName}>
+                <p className="today-events-number">{props.showedData.length} événements aujourd'hui</p>
                 <LocationFilter
                     data={props.data}
                     query={props.query}
