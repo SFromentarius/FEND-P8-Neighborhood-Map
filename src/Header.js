@@ -4,8 +4,8 @@ import './App.css';
 const Header =()=> {
     return (
         <div className='header'>
-            <h1>The City of Nantes - An events map</h1>
-            <h4 className='header-details'>with data provided by Nantes Métropole</h4>
+            <h1>Événements du jour à Nantes et Nantes Métropole</h1>
+            <h4 className='header-details'>avec des données open source partagées par Nantes Métropole</h4>
         </div>
     )
 }

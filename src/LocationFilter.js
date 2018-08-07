@@ -6,16 +6,16 @@ const LocationFilter =(props)=> {
     return (
         <div className='location-filter'>
             {props.asideClassName === 'sm-aside-open' && (
-                <p><i>click on an event to view related information</i></p>
+                <p><i>Cliquez sur un événement pour voir plus d'informations</i></p>
             )}
             <input tabIndex='1'
                 value={props.query}
                 type='text'
-                placeholder="Search an event name..."
+                placeholder="Rechercher un événement par son nom..."
                 onChange={(e)=>props.updateQuery(e.target.value)}
-                aria-label='Search for an event name...'
+                aria-label='Rechercher un événement par son nom...'
             />
-            <span className="list-sorted-type">sorted by date</span><br/>
+            {/*<span className="list-sorted-type">sorted by date</span><br/>*/}
         </div>
     )
 }
