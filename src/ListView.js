@@ -23,6 +23,7 @@ class ListView extends React.Component {
                         )
                     })
                 )}
+            <li className="list-name">créé par @<a href='https://twitter.com/SFromentarius' target='_blank' rel="noopener noreferrer">SFromentarius</a></li>
         </ul>
      
     );
