@@ -9,23 +9,24 @@
     position: absolute;
 }
 
-@media (max-width:620px){
-    .sub-container{
-        grid-template-areas:"sm-menu header" "map map";
+@media (max-width:620px) {
+    .sub-container {
+        grid-template-areas: "sm-menu header" "map map";
     }
 }
 
 /*
 * SM MENU (displayed only for small screen)
 */
-.sm-menu{
-    grid-area:sm-menu;
+
+.sm-menu {
+    grid-area: sm-menu;
     background-color: #CEE5E8;
     display: flex;
     justify-content: center;
 }
 
-.sm-menu ul{
+.sm-menu ul {
     cursor: pointer;
     width: 50%;
     text-decoration: none;
@@ -35,12 +36,12 @@
     align-self: center;
 }
 
-.sm-menu ul li{
+.sm-menu ul li {
     width: 100%;
     height: 4px;
     background-color: rgba(87, 87, 87, 0.88);
     margin-bottom: 4px;
-    
+
 }
 
 /*
@@ -53,16 +54,27 @@
     text-align: center;
 }
 
-.header h1{
-    padding-top:10px;
-    padding-bottom:10px;
-    margin:0;
+.header h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
 }
 
-.header-details{
-    margin:0;
-    padding-bottom:15px;
+.header-details {
+    margin: 0;
+    padding-bottom: 15px;
 }
+
+@media (max-width:620px) {
+    .header h1 {
+        font-size:15px;
+    }
+
+    .header-details {
+        display:none;
+    }
+}
+
 
 /*
 * MAP
@@ -76,42 +88,44 @@
 }
 
 /* POP UP */
-.leaflet-popup-content{
+
+.leaflet-popup-content {
     display: flex;
     flex-direction: column;
 }
 
-.leaflet-popup-content h2{
-    font-weight:700;
+.leaflet-popup-content h2 {
+    font-weight: 700;
     color: #f7cd59;
     text-align: center;
 }
 
-.popup-date{
+.popup-date {
     text-align: center;
     font-size: 13px;
 }
 
-.popup-place{
+.popup-place {
     text-align: center;
     font-size: 14px;
 }
 
-.popup-description{
+.popup-description {
     text-align: justify;
     font-size: 13px;
 }
 
-.popup-lien{
+.popup-lien {
     font-style: italic;
-    text-align:center;
+    text-align: center;
 }
 
 /* from https://jasonsalzman.github.io/react-add-to-calendar/ */
+
 .react-add-to-calendar {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-    text-align:center;
-    margin-top:20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .react-add-to-calendar__wrapper {
@@ -127,27 +141,27 @@
     color: #000;
 }
 
-.react-add-to-calendar__button span{
-    color:black;
+.react-add-to-calendar__button span {
+    color: black;
 }
 
 .react-add-to-calendar__dropdown {
-    margin-top:12px;
+    margin-top: 12px;
 }
 
 .react-add-to-calendar__dropdown ul {
     list-style-type: none;
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
-.react-add-to-calendar__dropdown ul li{
-    margin-top:3px;
+.react-add-to-calendar__dropdown ul li {
+    margin-top: 3px;
 }
 
-.react-add-to-calendar__dropdown ul li a{
+.react-add-to-calendar__dropdown ul li a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
 .fa {
@@ -171,31 +185,31 @@
     overflow-y: auto;
 }
 
-@media (max-width:620px){
-    .aside{
-        display:none;
+@media (max-width:620px) {
+    .aside {
+        display: none;
     }
-    
-    .sm-aside-open{
-    display: flex;
-    flex-direction: column;
-    position: fixed; 
-    width: 100%; 
-    height: 100%; 
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #f7cd59; 
-    z-index: 10; 
-    cursor: pointer;
-    overflow-y: auto;
+
+    .sm-aside-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f7cd59;
+        z-index: 10;
+        cursor: pointer;
+        overflow-y: auto;
     }
 }
 
-.today-events-number{
-    margin:0;
-    padding-top:7px;
+.today-events-number {
+    margin: 0;
+    padding-top: 7px;
 }
 
 
@@ -215,8 +229,8 @@
     margin: 12px auto;
 }
 
-.location-filter .list-sorted-type{
-    font-size:12px;
+.location-filter .list-sorted-type {
+    font-size: 12px;
 }
 
 /*
@@ -227,23 +241,22 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align:center;
+    text-align: center;
 }
 
 .list-view li {
     margin-bottom: 10px;
 }
 
-.list-view .list-date{
+.list-view .list-date {
     font-size: 13px;
 }
 
-.list-view .list-name{
+.list-view .list-name {
     font-size: 15px;
-    
+
 }
 
-.list-view .list-location{
+.list-view .list-location {
     font-size: 14px;
 }
-
