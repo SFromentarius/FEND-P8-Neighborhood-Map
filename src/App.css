@@ -50,7 +50,7 @@
 
 .header {
     grid-area: header;
-    background-color: #CEE5E8;
+    background-color: #CEE5E8; /*#00AFE6*/
     text-align: center;
 }
 
@@ -67,11 +67,13 @@
 
 @media (max-width:620px) {
     .header h1 {
-        font-size:15px;
+        font-size:23px;
+        padding-bottom: 5px;
+        padding-top:13px;
     }
 
     .header-details {
-        display:none;
+        font-size: 15px;
     }
 }
 
@@ -177,7 +179,7 @@
 
 .aside {
     grid-area: aside;
-    background-color: #f7cd59;
+    background-color: #f7cd59; /*#f7cd59*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,4 +268,9 @@
 
 .list-view .list-location {
     font-size: 14px;
+}
+
+.list-bottom{
+    border-top:1px solid black;
+    padding-top:5px;
 }
