@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import * as ReactLeaflet from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import swal from 'sweetalert';
@@ -38,17 +39,11 @@ class Map extends React.Component {
 
     // when FeatureGroup is add, fire this function to fit bounds of the map with FeatureGroup (which is the group of markers)
     mapFitBounds(ref, map){
-        if(ref && map){
+        if(ref && map && !_.isEmpty(ref.leafletElement.getBounds())){ //check if ref and map exists, and check if the array returned by ref.leafletElement.getBounds() is not empty. If empty, means there is no markers displayed, means bounds error
             map.fitBounds(ref.leafletElement.getBounds(),{maxZoom:14});
-            //console.log(ref)
-            //console.log(map)
-        } else {
-            //console.log('nothing')
-        }
-        // TO DO : error when no matching with query which cause ref invalid !
+        } 
     }
-    
-    
+
     handleTileError(errorData){
         console.log(errorData)
         
