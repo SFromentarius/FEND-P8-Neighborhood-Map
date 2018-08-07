@@ -183,6 +183,7 @@
     align-items: center;
     max-height: 100%;
     overflow-y: auto;
+    text-align:center;
 }
 
 @media (max-width:620px) {
@@ -204,6 +205,12 @@
         z-index: 10;
         cursor: pointer;
         overflow-y: auto;
+        text-align:center;
+    }
+    .today-events-number {
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-top: 10px;
     }
 }
 
