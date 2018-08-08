@@ -25,7 +25,7 @@ class ListView extends React.Component {
                         )
                     })
                 )}
-            <li className="list-name list-bottom">source : données open source de <a href='https://data.nantesmetropole.fr/pages/home/' target='_blank' rel="noopener noreferrer">Nantes Métropole</a></li>
+            <li className="list-name list-bottom">source : Agenda des événements de la Ville de Nantes et de Nantes Métropole, Nantes Métropole, 08/08/2018, sous licence ODbL.</li>
             <li className="list-name">créé par @<a href='https://twitter.com/SFromentarius' target='_blank' rel="noopener noreferrer">SFromentarius</a></li>
         </ul>
      
