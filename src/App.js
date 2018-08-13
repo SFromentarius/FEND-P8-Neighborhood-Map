@@ -40,7 +40,8 @@ class App extends React.Component {
             query:'',
             asideClassName:'aside',
             menuExpanded:false,
-            mapClassName:'leaflet-container'
+            mapClassName:'leaflet-container',
+            todayEventsNumberColor:'#000000'
         };
     }
 
@@ -142,7 +143,13 @@ class App extends React.Component {
 
     // to set query state from the user input's value 
     updateQuery=(query)=>{
-        this.setState({query: query.trim()}) 
+        this.setState({query: query.trim()});
+        
+        //highlight the number of events when query changes
+        this.setState({todayEventsNumberColor:'#f7cd59'}); 
+        setTimeout(() => {
+            this.setState({todayEventsNumberColor:'#000000'})
+        }, 100);
     }
     
     menuClick(){
@@ -185,6 +192,7 @@ class App extends React.Component {
                     updateQuery={this.updateQuery.bind(this)}
                     showedData={showedData}
                     asideClassName={this.state.asideClassName}
+                    todayEventsNumberColor={this.state.todayEventsNumberColor}
                 />
                 <Map
                     data={this.state.data}

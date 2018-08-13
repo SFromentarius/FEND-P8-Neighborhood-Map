@@ -6,9 +6,9 @@ import LocationFilter from './LocationFilter';
 const Aside =(props)=> {
         return (
             <div className={props.asideClassName}>
-                <p className="today-events-number">{props.showedData.length} événements aujourd'hui</p>
+                <p className="today-events-number" style={{color: props.todayEventsNumberColor}}>{props.showedData.length} événements aujourd'hui</p>
                 {props.query &&(
-                    <span>avec le mot-clé "{props.query}"</span>
+                    <span style={{color: props.todayEventsNumberColor}}>avec le mot-clé "{props.query}"</span>
                 )}
                 
                 <LocationFilter
