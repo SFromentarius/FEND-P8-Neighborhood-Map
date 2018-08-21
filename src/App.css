@@ -106,6 +106,10 @@ body{
     text-align: center;
 }
 
+.leaflet-popup-content span{
+    margin-top:5px;   
+}
+
 .popup-date {
     text-align: center;
     font-size: 13px;
