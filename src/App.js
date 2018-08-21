@@ -55,12 +55,13 @@ class App extends React.Component {
                 if (response.ok) {
                     return response.json();
                 } else { // if the response doesn’t match the expected data
-                throw new Error('Something went wrong ...');
+                    throw new Error('Something went wrong ...');
                 }
             })  
             .then(data => {
-                //get useful data
-                let prelocationData = data.records.map((event)=>{
+                let prelocationData = data.records.filter((event)=>{
+                    return event.fields.location // only get event with valid location data
+                }).map((event)=>{ //get useful data
                     //console.log(event.heure_debut + event.heure_fin);
                     let date = event.fields.date;
                     let name = event.fields.nom;
@@ -74,13 +75,13 @@ class App extends React.Component {
                     //location, from string to a latLng array
                     let locString = event.fields.location;
                     let location = JSON.parse("[" + locString + "]");
-                    
-                    return {name:name, date:date, location:location, place:place, description:description, urlMedia:urlMedia, link:link, startTime:startTime, endTime:endTime, id:id};
+
+                    return ({name:name, date:date, location:location, place:place, description:description, urlMedia:urlMedia, link:link, startTime:startTime, endTime:endTime, id:id})
             })
-         
                 //sort by date
                 prelocationData = _.sortBy(prelocationData, 'date');
-                    
+                
+                
                 
                prelocationData = prelocationData.filter((event)=>{
                     let eventDate = moment(event.date).get('date');
@@ -125,7 +126,6 @@ class App extends React.Component {
                     
                     return {name:name, date:date, location:location, place:place, description:description, urlMedia:urlMedia, link:link, startTime:startTime, endTime:endTime, dateStartTime:dateStartTime, dateEndTime:dateEndTime, id:id};
             })
-            
                     this.setState({ 
                         data: locationData, 
                         isLoading: false })
@@ -157,7 +157,7 @@ class App extends React.Component {
         
     }
     
-    render() {     
+    render() { 
         // original data are filtered to only have showedData = the data which matches the query 
         let showedData;
         if(this.state.query){ // is true = existing
